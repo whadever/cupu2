@@ -18,7 +18,7 @@
       $_SESSION['last_name'] = $row['LAST_NAME'];
       $_SESSION['first_name'] = $row['FIRST_NAME'];
       $_SESSION['userid'] = $row['USER_ID'];
-    
+    }
     
     header("Location: http://localhost/cupu2/index.php");
     db2_close(); 

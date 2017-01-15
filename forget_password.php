@@ -7,29 +7,22 @@
 
   if (isset($_POST['submit'])) {
     $email = $_POST['email'];
-    $stmt = db2_prepare($con, $query);
-    if($stmt){
-      $result = db2_execute($stmt);
-      if (!$result) {
-           echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-           exit();  
-        }
+    $query = "SELECT * FROM users WHERE user_id='$email'";   
+    $stmt = db2_exec($con, $query);
 
-        
-        while ($row = db2_fetch_array($stmt)) {
-          $_SESSION['role'] = $row[4];
-          $_SESSION['last_name'] = $row[2];
-          $_SESSION['first_name'] = $row[1];
-          $_SESSION['userid'] = $row[0];
-        }
-        
-        header("Location: http://localhost/cupu2/index.php");
-        db2_close(); 
-        
-      
-    }else{
-      echo "exec errormsg: " . db2_stmt_errormsg($stmt);
-    }
+    while($row = db2_fetch_assoc($stmt)){
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      mail($email,'Instructions to Reset Password','Here is your new password'.$randomString);
+      $query = "UPDATE users set password='$randomString' WHERE user_id='$email'"; 
+    }    
+    
+    header("Location: http://localhost/cupu2/index.php");
+    db2_close(); 
   }
 
  ?>
@@ -38,7 +31,7 @@
 	<div class="col-sm-4 col-xs-12" style="border:1px solid black; padding: 2% 3%; border-radius: 6px; background-color:#eee ">
 		 <form action="forget_password.php" method="post">
 	      
-	      <h2>Please provide us with your User ID (Email)</h2>
+	      <h4>Please provide us with your User ID (Email)</h4>
 	      
 	      <div class="form-group">
 	        <label for="">User ID (same as your email address) :</label>
