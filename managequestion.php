@@ -15,18 +15,8 @@
 				}
 
 				$query = "SELECT * FROM category";		
-				$stmt = db2_prepare($con, $query);
-				if ($stmt) {
-				  $result = db2_execute($stmt);
-				  if (!$result) {
-				     echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-				     exit();	
-				  }
-				} else {
-				     echo "exec errormsg: " . db2_stmt_errormsg($stmt);
-				}
+				$stmt = db2_exec($con, $query);
 		?>
-
 		<?php while ($row = db2_fetch_array($stmt)){?>
 		<h1><?php echo ucfirst($row[1]) ?></h1>
 		<table class="table table-bordered">
@@ -38,19 +28,11 @@
 			</thead>
 			<tbody>
 			<?php 
-				$query = "SELECT questions.*,category.name FROM questions,category WHERE questions.topic ='$row[0]' ";		
-					$stmt = db2_prepare($con, $query);
-					if ($stmt) {
-					  $result = db2_execute($stmt);
-					  if (!$result) {
-					     echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-					     exit();	
-					  }
-					} else {
-					     echo "exec errormsg: " . db2_stmt_errormsg($stmt);
-					}
+				$query1 = "SELECT questions.*,category.name FROM questions JOIN category ON questions.topic = category.id WHERE category.id = '$row[0]' ";		
+					$stmt1 = db2_exec($con, $query1);
+					
 			 ?>
-				<?php while ($questions = db2_fetch_array($stmt)){?>
+				<?php while ($questions = db2_fetch_array($stmt1)){?>
 		    		<tr>
 		    			<td><?php echo $questions[0] ?></td>
 		    			<td><?php echo $questions[2] ?></td>
@@ -62,7 +44,7 @@
 			</tbody>
 		</table>
 		<?php } ?>
-		<a href="index.php?register" class="btn btn-primary">add user</a>
+		<a href="addquestion.php" class="btn btn-primary">add question(XML)</a>
 		
 	</div>
 	<div class="col-md-3"></div>

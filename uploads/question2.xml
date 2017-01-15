@@ -1,0 +1,21 @@
+<question>
+<author>
+<user_ID> admin@admin.com </user_ID>
+</author>
+<classification>
+<topic>DB2 Advance</topic>
+<subtopic> Configuration </subtopic>
+</classification>
+<level> Easy </level>
+<language> English </language>
+<minutes_allocated> 2 </minutes_allocated>
+<question_text>
+Which command is used to review the value of the DB2 xxxx?
+</question_text>
+<answer>
+<choice1> xxx dbm cfg </choice1>
+<choice2 type="correct"> xxxx </choice2>
+<choice3> getsda dbm cfg </choice3>
+</answer>
+<keywords> DB2 registry, dbm cfg, db2set </keywords>
+</question>

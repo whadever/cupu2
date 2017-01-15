@@ -1,0 +1,21 @@
+<question>
+<author>
+<user_ID> admin@admin.com </user_ID>
+</author>
+<classification>
+<topic>DB2 Fundamental</topic>
+<subtopic> Configuration </subtopic>
+</classification>
+<level> Easy </level>
+<language> English </language>
+<minutes_allocated> 2 </minutes_allocated>
+<question_text>
+Which command is used to review the value of the DB2 registry?
+</question_text>
+<answer>
+<choice1> update dbm cfg </choice1>
+<choice2 type="correct"> db2set </choice2>
+<choice3> get dbm cfg </choice3>
+</answer>
+<keywords> DB2 registry, dbm cfg, db2set </keywords>
+</question>
