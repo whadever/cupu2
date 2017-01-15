@@ -6,3 +6,4 @@ db2 create table tests(no varchar(10),name varchar(100), creator varchar(100),dy
 db2 insert into tests values('100','DB2 Fundamental','irvan',0,60,10)
 db2 create table questions(id int primary key not null generated always as identity (start with 1 increment by 1),topic varchar(100),level varchar(100), question varchar(100), choice1 varchar(100), choice2 varchar(100), choice3 varchar(100), correctanswer int)
 db2 insert into questions(topic,level,question,choice1,choice2,choice3,correctanswer) values('DB2 Fundamental','easy','Which command is used to review the value of the DB2 registry?','update dbm cfg','get dbm cfg','db2set','3')
+db2 create table test_result(id int not null primary key generated always as identity(start with 1 increment by 1),test_no int,score decimal(5,2),user_id varchar(100))

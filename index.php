@@ -19,6 +19,7 @@
     elseif(isset($_GET["addtest"])) {include "addtest.php";}
     elseif(isset($_GET["forget_password"])) {include "forget_password.php";}
     elseif(isset($_GET["performtest"])) {include "performtest.php";}
+    elseif(isset($_GET["testresult"])) {include "testresult.php";}
     else {include "home.php";}
   ?>
 

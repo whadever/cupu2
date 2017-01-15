@@ -26,7 +26,7 @@
 		<h2></h2>
 		<p class="no-margin">1.<a href="index.php?performtest">Write A test</a></p>
 
-		<p class="no-margin">2.<a href="index.php?testresult">Manage Questions</a></p>
+		<p class="no-margin">2.<a href="index.php?testresult">View Test Result</a></p>
 
 	</div>
 </div>
