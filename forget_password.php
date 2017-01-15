@@ -1,8 +1,4 @@
 <?php 
-  if(!isset($_SESSION['userid'])){
-  session_destroy();
-  session_start();
-  }
   require_once("./includes/config.php");
 
   if (isset($_POST['submit'])) {
@@ -14,15 +10,20 @@
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
       $charactersLength = strlen($characters);
       $randomString = '';
-      for ($i = 0; $i < $length; $i++) {
+      for ($i = 0; $i < $charactersLength; $i++) {
           $randomString .= $characters[rand(0, $charactersLength - 1)];
       }
-      mail($email,'Instructions to Reset Password','Here is your new password'.$randomString);
+      $to      = $email;
+      $subject = 'the subject';
+      $message = 'hello';
+      $headers = 'From: setyawansusanto99@gmail.com' . "\r\n" .
+      'Reply-To: webmaster@example.com' . "\r\n" .
+      'X-Mailer: PHP/' . phpversion();
+
+      mail($to, $subject, $message, $headers);
+      
       $query = "UPDATE users set password='$randomString' WHERE user_id='$email'"; 
     }    
-    
-    header("Location: http://localhost/cupu2/index.php");
-    db2_close(); 
   }
 
  ?>
