@@ -1,6 +1,10 @@
-create table users(user_id varchar(100), last_name varchar(100), first_name varchar(100), password varchar(100), role varchar(20))
-insert into users values('kelvin@gmail.com', 'prim', 'kelvin', 'asdasd', 'admin')
-create table tests(no varchar(10), name varchar(100), creator varchar(100), dynamic boolean, duration int, totalquestion int)
-insert into test values('100', 'DB2 Fundamental', 'kelvin', 0, 60, 10)
-create table questions(id int not null, topic varchar(100), level varchar(100), question varchar(100), choice1 varchar(100), choice2 varchar(100), choice3 varchar(100), correctanswer int)
-insert into questions values(1, 'DB2 Fundamental', 'easy', 'Which command is used to review the value of the DB2 registry?', 'update dbm cfg', 'db2set', 'get dbm cfg', '1 and 3', '2 and 3', 2)
+db2 create database project
+db2 connect to project
+db2 create table users(user_id varchar(100), last_name varchar(100), first_name varchar(100), password varchar(100), role varchar(20))
+db2 insert into users values('irpanwinata@gmail.com','winata','irvan','1234','admin')
+db2 create table tests(no varchar(10),name varchar(100), creator varchar(100),dynamic boolean,duration int,total_question int)
+db2 insert into tests values('100','DB2 Fundamental','irvan',0,60,10)
+db2 create table category(id int primary key not null generated always as identity (start with 1 increment by 1),name varchar(100))
+db2 insert into category(name) values ('DB2 Fundamentals')
+db2 create table questions(id int primary key not null generated always as identity (start with 1 increment by 1),topic int,level varchar(100), question varchar(100), choice1 varchar(100), choice2 varchar(100), choice3 varchar(100), correctanswer int)
+db2 insert into questions(topic,level,question,choice1,choice2,choice3,correctanswer) values('DB2 Fundamental','easy','Which command is used to review the value of the DB2 registry?','update dbm cfg','get dbm cfg','db2set',3)
