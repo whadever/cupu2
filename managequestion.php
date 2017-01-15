@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-6">
-		<h1>Manage Questions</h1>
+		<h1 class="text-center" style="margin-bottom: 40px;">Manage Questions</h1>
 		<?php	if (isset($_SESSION['userid'])):
 
 				if ($_SESSION['role'] != 'admin') {
@@ -37,14 +37,14 @@
 		    			<td><?php echo $questions[0] ?></td>
 		    			<td><?php echo $questions[2] ?></td>
 		    			<td><?php echo $questions[3] ?></td>
-		    			<td><a href="index.php?editquestion&id=<?php echo $questions[0] ?>">edit</a> - <a href="deletquestion.php?id=<?php echo $questions[0]?>">delete</a></td>
+		    			<td><a href="index.php?editquestion&id=<?php echo $questions[0] ?>">Edit</a> - <a href="deletquestion.php?id=<?php echo $questions[0]?>">Delete</a></td>
 		    		</tr>
 
 				<?php } ?>
 			</tbody>
 		</table>
 		<?php } ?>
-		<a href="addquestion.php" class="btn btn-primary">add question(XML)</a>
+		<a href="addquestion.php" class="btn btn-primary">Add Question(XML)</a>
 		
 	</div>
 	<div class="col-md-3"></div>

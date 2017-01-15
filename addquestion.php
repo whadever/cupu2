@@ -121,7 +121,7 @@
 <div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<h1>New Question</h1>
+		<h1 class="text-center" style="margin-bottom: 40px;">New Question</h1>
 
 		<form action="addquestion.php" method="post" enctype="multipart/form-data">
 

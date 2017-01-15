@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-6">
-		<h1>Manage Test</h1>
+		<h1 class="text-center" style="margin-bottom: 40px">Manage Test</h1>
 		<?php	if (isset($_SESSION['userid'])):
 
 				if ($_SESSION['role'] != 'admin') {
@@ -42,13 +42,13 @@
 		    			<td><?php echo $tests['DYNAMIC'] ?></td>
 		    			<td><?php echo $tests['DURATION'] ?></td>
 		    			<td><?php echo $tests['TOTAL_QUESTION'] ?></td>
-		    			<td><a href="index.php?edittest&id=<?php echo $tests['NO'] ?>">edit</a> - <a href="deletetest.php?id=<?php echo $tests['NO']?>">delete</a></td>
+		    			<td><a href="index.php?edittest&id=<?php echo $tests['NO'] ?>">Edit</a> - <a href="deletetest.php?id=<?php echo $tests['NO']?>">Delete</a></td>
 		    		</tr>
 
 				<?php } ?>
 			</tbody>
 		</table>
-		<a href="index.php?addtest" class="btn btn-primary">add test</a>
+		<a href="index.php?addtest" class="btn btn-primary">Add Test</a>
 		
 	</div>
 	<div class="col-md-3"></div>
