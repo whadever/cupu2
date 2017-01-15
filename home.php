@@ -28,6 +28,8 @@
 
 		<p class="no-margin">2.<a href="index.php?testresult">View Test Result</a></p>
 
+		<p class="no-margin">3.<a href="index.php?search">Search Test</a></p>
+
 	</div>
 </div>
 <?php endif; ?>
