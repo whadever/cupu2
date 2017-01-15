@@ -9,29 +9,22 @@
     $user_id = $_POST['username'];
     $password = $_POST['password'];
     $query = "SELECT * FROM users WHERE user_id='$user_id' AND password='$password'";   
-    $stmt = db2_prepare($con, $query);
-    if($stmt){
-      $result = db2_execute($stmt);
-      if (!$result) {
-           echo "exec errormsg: " .db2_stmt_errormsg($stmt);
-           exit();  
-        }
+    $stmt = db2_exec($con, $query);
+    
 
         
-        while ($row = db2_fetch_assoc($stmt)) {
-          $_SESSION['role'] = $row['ROLE'];
-          $_SESSION['last_name'] = $row['LAST_NAME'];
-          $_SESSION['first_name'] = $row['FIRST_NAME'];
-          $_SESSION['userid'] = $row['USER_ID'];
-        }
-        
-        header("Location: http://localhost/cupu2/index.php");
-        db2_close(); 
+    while ($row = db2_fetch_assoc($stmt)) {
+      $_SESSION['role'] = $row['ROLE'];
+      $_SESSION['last_name'] = $row['LAST_NAME'];
+      $_SESSION['first_name'] = $row['FIRST_NAME'];
+      $_SESSION['userid'] = $row['USER_ID'];
+    
+    
+    header("Location: http://localhost/cupu2/index.php");
+    db2_close(); 
         
       
-    }else{
-      echo "exec errormsg: " . db2_stmt_errormsg($stmt);
-    }
+   
   }
 
  ?>
