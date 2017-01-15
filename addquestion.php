@@ -32,7 +32,7 @@
 		} else {
 		    if (move_uploaded_file($_FILES["xmlfile"]["tmp_name"], $target_file)) {
 		        echo "The file ". basename( $_FILES["xmlfile"]["name"]). " has been uploaded.";
-		        $xml=simplexml_load_file('uploads/question1.xml') or die("Error: Cannot create object");
+		        $xml=simplexml_load_file('uploads/'.basename( $_FILES["xmlfile"]["name"])) or die("Error: Cannot create object");
 		       	
 		           $topic = $xml->classification->topic;
 				   $level = $xml->level;
