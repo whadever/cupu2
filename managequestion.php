@@ -37,7 +37,7 @@
 		    			<td><?php echo $questions[0] ?></td>
 		    			<td><?php echo $questions[2] ?></td>
 		    			<td><?php echo $questions[3] ?></td>
-		    			<td><a href="index.php?edituser&user_id=<?php echo $questions[0] ?>">edit</a> - <a href="deleteuser.php?userid=<?php echo $questions[0]?>">delete</a></td>
+		    			<td><a href="index.php?editquestion&id=<?php echo $questions[0] ?>">edit</a> - <a href="deletquestion.php?id=<?php echo $questions[0]?>">delete</a></td>
 		    		</tr>
 
 				<?php } ?>
