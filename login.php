@@ -48,6 +48,11 @@
         <a href="index.php?register" class="btn btn-warning">Register</a>
       </div>
 
+      <div class="form-group text-center">
+        <a href="index.php?forget_password">Lost your password</a>
+      </div>
+
+
 		</form>
 	</div>
 	<div class="col-sm-4"></div>
