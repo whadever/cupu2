@@ -1,0 +1,6 @@
+create table users(user_id varchar(100), last_name varchar(100), first_name varchar(100), password varchar(100), role varchar(20))
+insert into users values('kelvin@gmail.com', 'prim', 'kelvin', 'asdasd', 'admin')
+create table tests(no varchar(10), name varchar(100), creator varchar(100), dynamic boolean, duration int, totalquestion int)
+insert into test values('100', 'DB2 Fundamental', 'kelvin', 0, 60, 10)
+create table questions(id int not null, topic varchar(100), level varchar(100), question varchar(100), choice1 varchar(100), choice2 varchar(100), choice3 varchar(100), correctanswer int)
+insert into questions values(1, 'DB2 Fundamental', 'easy', 'Which command is used to review the value of the DB2 registry?', 'update dbm cfg', 'db2set', 'get dbm cfg', '1 and 3', '2 and 3', 2)
