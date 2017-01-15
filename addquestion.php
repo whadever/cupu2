@@ -33,33 +33,8 @@
 		    if (move_uploaded_file($_FILES["xmlfile"]["tmp_name"], $target_file)) {
 		        echo "The file ". basename( $_FILES["xmlfile"]["name"]). " has been uploaded.";
 		        $xml=simplexml_load_file('uploads/question1.xml') or die("Error: Cannot create object");
-		       	$name = $xml->classification->topic;
-				$query = "SELECT * FROM category WHERE name='$name'";   
-			    $stmt = db2_prepare($con, $query);
-			    if($stmt){
-			      $result = db2_execute($stmt);
-			      
-			  	}
-				   $row = db2_fetch_array($stmt);
-				   if(count($row) <= 1){
-				   		$query = "INSERT INTO category(name) values('$name')";   
-					    $stmt = db2_prepare($con, $query);
-					   
-					    $result = db2_execute($stmt);
-					      
-					  	
-					  	$query = "SELECT * FROM category WHERE name='$name'";   
-					    $stmt = db2_prepare($con, $query);
-					    if($stmt){
-					      $result = db2_execute($stmt);
-					      
-					  	}
-					  	$row = db2_fetch_array($stmt);
-					  	$topic = $row[0];
-				   }else{
-				   		$topic = $row[0];
-				   }
-
+		       	
+		           $topic = $xml->classification->topic;
 				   $level = $xml->level;
 				   $question = $xml->question_text;
 				   $choice1 = $xml->answer->choice1;
@@ -72,13 +47,6 @@
 					}elseif($xml->answer->choice3->attributes()){
 						$correct = 3;
 					}
-					echo $topic;
-					echo $question;
-					echo $level;
-					echo $choice1;
-					echo $choice2;
-					echo $choice3;
-					echo $correct;
 					$query = "INSERT INTO questions(topic,question,level,choice1,choice2,choice3,correctanswer) values('$topic','$question','$level','$choice1','$choice2','$choice3','$correct')";
 				   	$stmt = db2_prepare($con, $query);
 					   
