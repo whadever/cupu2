@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-12">
 		<h1>Welcome,<?php if(isset($_SESSION['userid'])){ echo $_SESSION['first_name'].' '.$_SESSION['last_name'];}else{ echo 'Please Login to Access This Page';} ?></h1>
 	</div>
 </div>
@@ -7,7 +7,7 @@
 <?php if($_SESSION['role'] == 'admin'): ?>
 <div class="row">
 
-	<div class="col-xs-12 text-center">
+	<div class="col-xs-12">
 		<h2 style="margin-bottom: 40px;">This page is only for administrators. The following operation can be performed</h2>
 		<p class="no-margin">1.<a href="index.php?manageuser">Manage Users</a></p>
 		<p>Assign Roles, Delete users, add users, edit user information</p>
