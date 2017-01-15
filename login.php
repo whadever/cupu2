@@ -1,7 +1,7 @@
 <?php 
   if(!isset($_SESSION['userid'])){
-  session_destroy();
-  session_start();
+    session_destroy();
+    session_start();
   }
   require_once("./includes/config.php");
 
@@ -18,11 +18,11 @@
         }
 
         
-        while ($row = db2_fetch_array($stmt)) {
-          $_SESSION['role'] = $row[4];
-          $_SESSION['last_name'] = $row[2];
-          $_SESSION['first_name'] = $row[1];
-          $_SESSION['userid'] = $row[0];
+        while ($row = db2_fetch_assoc($stmt)) {
+          $_SESSION['role'] = $row['ROLE'];
+          $_SESSION['last_name'] = $row['LAST_NAME'];
+          $_SESSION['first_name'] = $row['FIRST_NAME'];
+          $_SESSION['userid'] = $row['USER_ID'];
         }
         
         header("Location: http://localhost/cupu2/index.php");

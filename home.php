@@ -15,7 +15,7 @@
 		<p class="no-margin">2.<a href="index.php?managequestion">Manage Questions</a></p>
 		<p>Create new questions online, upload question, set up question generator variables</p>
 
-		<p class="no-margin">3.<a href="">Manage Tests</a></p>
+		<p class="no-margin">3.<a href="index.php?managetests">Manage Tests</a></p>
 		<p>Create new tests, set up test variables</p>
 	</div>
 </div>

@@ -15,6 +15,8 @@
     elseif(isset($_GET["manageuser"])) {include "manageuser.php";}
     elseif(isset($_GET["edituser"])) {include "edituser.php";}
     elseif(isset($_GET["managequestion"])) {include "managequestion.php";}
+    elseif(isset($_GET["managetests"])) {include "managetests.php";}
+    elseif(isset($_GET["addtest"])) {include "addtest.php";}
     else {include "home.php";}
   ?>
 
