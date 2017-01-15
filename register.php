@@ -51,14 +51,13 @@
 				<input type="text" class="form-control" name="user_id" onblur="check_user(this)" id="user_id">
 			</div>
 			<div class="form-group">
-				<label for="">Last Name</label>
-				<input type="text" class="form-control" name="lastname">
-			</div>
-			<div class="form-group">
 				<label for="">First Name</label>
 				<input type="text" class="form-control" name="firstname">
 			</div>
-
+			<div class="form-group">
+				<label for="">Last Name</label>
+				<input type="text" class="form-control" name="lastname">
+			</div>
 			<div class="form-group">
 				<label for="">Password</label>
 				<input type="password" minlength="8" class="form-control" onblur="check_pass()" name="password" id="password">
@@ -73,7 +72,6 @@
 					<option value="Indonesia">Indonesia</option>
 				</select>
 			</div>
-
 			<div class="form-group">
 				<input type="submit" class="btn btn-success" name="submit" value="Sign Up">
 			</div>

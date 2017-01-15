@@ -7,7 +7,7 @@
 <div class="row">
 	<div class="col-md-3"></div>
 	<div class="col-md-6">
-		<h1>Manage User</h1>
+		<h1 class="text-center" style="margin-bottom: 40px;">Manage User</h1>
 		<?php	if (isset($_SESSION['userid'])):
 
 				if ($_SESSION['role'] != 'admin') {
@@ -41,13 +41,13 @@
 		    			<td><?php echo $row[1] ?></td>
 		    			<td><?php echo $row[2] ?></td>
 		    			<td><?php echo $row[4] ?></td>
-		    			<td><a href="index.php?edituser&user_id=<?php echo $row[0] ?>">edit</a> - <a href="deleteuser.php?userid=<?php echo $row[0]?>">delete</a></td>
+		    			<td><a href="index.php?edituser&user_id=<?php echo $row[0] ?>">Edit</a> - <a href="deleteuser.php?userid=<?php echo $row[0]?>">Delete</a></td>
 		    		</tr>
 
 				<?php } ?>
 			</tbody>
 		</table>
-		<a href="index.php?register" class="btn btn-primary">add user</a>
+		<a href="index.php?register" class="btn btn-primary">Add User</a>
 		
 	</div>
 	<div class="col-md-3"></div>

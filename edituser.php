@@ -55,7 +55,7 @@
 <div class="row">
 	<div class="col-md-4"></div>
 	<div class="col-md-4">
-		<h1>Edit User</h1>
+		<h1 class="text-center" style="margin-bottom: 40px;">Edit User</h1>
 
 		<form action="edituser.php" method="post">
 
@@ -64,14 +64,13 @@
 				<input type="text" class="form-control" name="user_id" value="<?php echo $user[0] ?>" readonly='readonly' id="user_id">
 			</div>
 			<div class="form-group">
-				<label for="">Last Name</label>
-				<input type="text" class="form-control" value="<?php echo $user[1] ?>" name="lastname">
-			</div>
-			<div class="form-group">
 				<label for="">First Name</label>
 				<input type="text" class="form-control" value="<?php echo $user[2] ?>" name="firstname">
 			</div>
-
+			<div class="form-group">
+				<label for="">Last Name</label>
+				<input type="text" class="form-control" value="<?php echo $user[1] ?>" name="lastname">
+			</div>
 			<div class="form-group">
 				<label for="">Password</label>
 				<input type="password" minlength="8" value="<?php echo $user[3] ?>" class="form-control" name="password" id="password">
