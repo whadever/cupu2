@@ -10,12 +10,12 @@
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
       $charactersLength = strlen($characters);
       $randomString = '';
-      for ($i = 0; $i < $charactersLength; $i++) {
+      for ($i = 0; $i < 5; $i++) {
           $randomString .= $characters[rand(0, $charactersLength - 1)];
       }
       $to      = $email;
-      $subject = 'the subject';
-      $message = 'hello';
+      $subject = 'Your New Password';
+      $message = 'Your resetted password is '.$randomString;
       $headers = 'From: setyawansusanto99@gmail.com' . "\r\n" .
       'Reply-To: webmaster@example.com' . "\r\n" .
       'X-Mailer: PHP/' . phpversion();
@@ -23,6 +23,8 @@
       mail($to, $subject, $message, $headers);
       
       $query = "UPDATE users set password='$randomString' WHERE user_id='$email'"; 
+      db2_exec($con, $query);
+      header("Location: http://localhost/cupu2/index.php");
     }    
   }
 
