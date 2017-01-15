@@ -14,7 +14,7 @@
 					header("Location: http://localhost/cupu2/index.php"); 
 				}
 
-				$query = "SELECT * FROM category";		
+				$query = "SELECT * FROM tests";		
 				$stmt = db2_exec($con, $query);
 		?>
 		<?php while ($row = db2_fetch_array($stmt)){?>
@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 			<?php 
-				$query1 = "SELECT questions.*,category.name FROM questions JOIN category ON questions.topic = category.id WHERE category.id = '$row[0]' ";		
+				$query1 = "SELECT questions.*,tests.name FROM questions JOIN tests ON questions.topic = tests.name WHERE tests.name = '$row[1]' ";		
 					$stmt1 = db2_exec($con, $query1);
 					
 			 ?>
